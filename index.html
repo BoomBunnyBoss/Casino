@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    /* #bet-result {display: none}
+    #bet-point {display: none} */
+</style>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            Казино
+        </header>
+        <section class="main">
+            <div class="info">
+                <div class="info__wallet" id="wallet">
+                    Ваш баланс: 
+                    <span class="bank">
+                        500$
+                    </span>
+                </div>
+                <div class="message" id="msg"></div>
+                <input type="text" class="info__bet" id="bet" placeholder="Введите ставку">
+            </div>
+            <button class="button" id="toss-button" onclick="clickHandler()">
+                Бросить кубики
+            </button>   
+        </section>
+        <!-- <section id="bet-result">
+            <div id="resultInfo">    
+                <div class="info__wallet" id="wallet">
+                    Ваш баланс: 
+                    <span class="bank">
+                        500$
+                    </span>
+              <p>На кубиках:
+                <strong id="dice1result">
+                  4
+                </strong>
+                ,
+                <strong id="dice2result">
+                  4
+                </strong>
+              </p>
+              <p id="resultText">
+                  You lost
+                  <strong id="betAmount">
+                      100
+                    </strong>
+                </p>      
+            </div>
+            <form>      
+                <button type="button" id="betRsltBtn" onclick="goBackHandler()">
+                    Попробовать еще
+                </button>
+            </form>    
+          </section>
+        </section>
+        <section id="bet-point">
+            <div id="resultBetInfo">
+                <div id="resultInfo">    
+                    <div class="info__wallet" id="wallet">Ваш баланс: 
+                        <span class="bank">
+                            500$
+                        </span>
+                        <p>На кубиках:
+                        <strong id="dice1result">
+                            4
+                        </strong>
+                        ,
+                        <strong id="dice2result">
+                            4
+                        </strong>
+                        </p>
+                        <p id="resultText">
+                            You lost
+                        <strong id="betAmount">
+                            100
+                        </strong>
+                        </p>      
+                </div>
+            <p>Продолжить играть</p>
+            <form>      
+                <button type="button" onclick="rollTheDiceHandler('point')">Roll the dice</button>
+            </form>    
+          </section> -->
+    </div>
+    <footer>
+        <img src="https://www.freeiconspng.com/thumbs/dice-png/dice-png-transparent-2012-at-1200-674-in-dice-15.png" alt="">
+    </footer>
+    <script src="js/main.js"></script> 
+</body>
+</html>
