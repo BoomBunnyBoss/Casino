@@ -26,31 +26,10 @@ function clickHandler() {
     }
     else {
         stage = "new";
-        bank = tempCash;
+        bank = moneyStatus;
         updateForm( startText(), true);
     }
 }
-
-function generalHandler (gameresult, cubeA, cubeB, bet) {
-    if (gameresult === "win") {
-        stage = "win";
-        tempCash = bank + bet * 2;
-        newText( winText(cubeA, cubeB, bet), false);
-    } 
-    else if (gameresult === "lose") {
-        stage = "lose";
-        tempCash = bank - bet;
-        newText( loseText(cubeA, cubeB, bet), false);
-    }
-    else if (gameresult === "point") {
-        stage = "point";
-        point = cubeA + cubeB;
-        newText( pointStartMessage(cubeA, cubeB, bet), false);
-    }
-    else {
-        newText( pointMessage(cubeA, cubeB, bet), false);
-    }
-}   
 
 function primaryGameHandler(cubeA, cubeB) {
     let sum = cubeA + cubeB;
@@ -66,6 +45,28 @@ function primaryGameHandler(cubeA, cubeB) {
     }
     return result;
 }
+
+function generalHandler (gameresult, cubeA, cubeB, bet) {
+    if (gameresult === "win") {
+        stage = "win";
+        moneyStatus = bank + bet * 2;
+        newText( winText(cubeA, cubeB, bet), false);
+    } 
+    else if (gameresult === "lose") {
+        stage = "lose";
+        moneyStatus = bank - bet;
+        newText( loseText(cubeA, cubeB, bet), false);
+    }
+    else if (gameresult === "point") {
+        stage = "point";
+        point = cubeA + cubeB;
+        newText( pointStartMessage(cubeA, cubeB, bet), false);
+    }
+    else {
+        newText( pointMessage(cubeA, cubeB, bet), false);
+    }
+}   
+
 
 function winText (cubeA, cubeB, bet) {
     let walletText = `Баланс:${bank}`;
@@ -134,7 +135,6 @@ function pointStartMessage (cubeA, cubeB, bet) {
 
 function newText(msg) {
     let game = document.getElementById("bet");
-    game.innerHTML = "";
     document.getElementById("wallet").innerHTML = msg.wallet;
     document.getElementById("msg").innerHTML = msg.msg;
     document.getElementById("toss-button").innerHTML = msg.button;
